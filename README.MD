@@ -16,4 +16,4 @@
 
 ## Tela Contador 
 
-![Alt text](/screenshots/play.png "Optional Title")
+![Alt text](/screenshots/start.png "Optional Title")
