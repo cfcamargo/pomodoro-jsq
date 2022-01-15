@@ -2,6 +2,7 @@ const minutesInput = document.querySelector('#minutes')
 const secondsInput = document.querySelector('#seconds')
 
 
+const options = document.querySelector('#options')
 
 const starButton = document.querySelector('#start-button')
 const stopButton = document.querySelector('#stop-button')
@@ -53,6 +54,7 @@ function start(){
 
     starButton.style.display = "none"
     stopButton.style.display = "inline-block"
+    options.style.display = "none"
 
 }
 
@@ -66,6 +68,7 @@ function stop(){
 
     starButton.style.display = "inline-block"
     stopButton.style.display = "none"
+    options.style.display = "inline-block"
 
     setTimerOnDisplay(25,0)
 }
