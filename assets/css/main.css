@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #db6cfe;
+  --color-secondary: #222222;
+}
+
+body {
+  width: 100%;
+  background-color: var(--color-secondary);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+#conteudo {
+  width: 90%;
+  max-width: 550px;
+  padding: 5rem 1rem;
+  margin: 0 auto;
+
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer span {
+  font-size: 2rem;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+#options {
+  display: flex;
+  gap: 1rem;
+}
+
+.options-time {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.4rem 0.6rem;
+}
+
+.options-time:hover {
+  transform: scale(1.1);
+  transition: ease all 1s;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+
+
+
+#start-button,
+#stop-button,
+#pause-button {
+  width: 200px;
+  height: 40px;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+}
+
+#stop-button{
+  display: none
+}
+
+#start-button:hover,
+#stop-button:hover,
+#pause-button:hover{
+    transform: scale(1.1);
+    opacity: .9;
+}
+
+@media screen and (min-width: 620px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  #timer span {
+    font-size: 4rem;
+  }
+}

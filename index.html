@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <title>Pomodoro Timer</title>
+  </head>
+  <body>
+
+    
+    <div id="conteudo">
+      <h1 id="title">Pomodoro</h1>
+
+      <div id="timer">
+        <span id="minutes">25</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </div>
+
+
+      <div id="options">
+        <span class="options-time" onclick="decrement()">-5</span>
+          <span class="options-time" onclick="setTimerOnDisplay(25,00)">25:00</span>
+          <span class="options-time" onclick="setTimerOnDisplay(30,00)">30:00</span>
+          <span class="options-time" onclick="setTimerOnDisplay(35,00)">35:00</span>
+          <span class="options-time" onclick="increment()">+5</span>
+      </div>
+
+      <div class="buttons">
+        <button id="start-button">Start</button>
+        <button id="stop-button" onclick="stop()">Stop</button>
+        <button id="pause-button" onclick="pause()">Pause</button>
+      </div>
+
+    </div>
+
+
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
