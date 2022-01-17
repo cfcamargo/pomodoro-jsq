@@ -8,7 +8,7 @@ const starButton = document.querySelector('#start-button')
 const stopButton = document.querySelector('#stop-button')
 const pauseButton = document.querySelector('#pause-button')
 
-starButton.addEventListener('click', ()=>{
+starButton.addEventListener('click', ()=>{ 
     start()
 })
 
@@ -22,37 +22,51 @@ var cron
 
 
 function decrement(){
-    minutes == 0 ? minutes = 0 : minutes = minutes - 5
+
+    if(minutes == 5){
+        minutes = 5
+    } else{
+        minutes = minutes - 5
+    }
     
-    setTimerOnDisplay(minutes,seconds)
+    setTimerOnDisplay(minutes)
 }
 
 function increment(){
-    minutes == 60 ? minutes = 60 : minutes = minutes + 5
+    if(minutes == 60){
+        minutes = 60
+    } else{
+        minutes = minutes + 5
+    }
     
-    setTimerOnDisplay(minutes,seconds)
+    setTimerOnDisplay(minutes)
 }
 
 
 
 
-function setTimerOnDisplay(min, sec){
-
-    minutesInput.innerHTML = min
-
-    sec >= 10 ? secondsInput.innerHTML = sec : secondsInput.innerHTML = `0${sec}`
+function setTimerOnDisplay(min){
 
     minutes = min
-    seconds = sec
+    
+    
+    minutesInput.innerHTML = minutes
+
+
+    secondsFormat = seconds >=10 ? seconds : `0${seconds}`
+
+    secondsInput.innerHTML = seconds == 60 ? '00' : secondsFormat;
+
+
+
 
     
 }
 
 function start(){
-    
+    minutes--
     cron = setInterval(timer,1000)
-    minutes-- 
-
+    
     starButton.style.display = "none"
     stopButton.style.display = "inline-block"
     pauseButton.style.display = "inline-block"
@@ -61,14 +75,16 @@ function start(){
 }
 
 function pause(){
+    minutes++
     clearInterval(cron)
     starButton.style.display = "inline-block"
     stopButton.style.display = "inline-block"
     pauseButton.style.display = "none"
-    minutes++
+    
 }
 
 function stop(){
+    
     clearInterval(cron)
 
     starButton.style.display = "inline-block"
@@ -76,7 +92,9 @@ function stop(){
     pauseButton.style.display = "none"
     options.style.display = "inline-block"
 
-    setTimerOnDisplay(25,0)
+    minutes = 25
+    seconds = 60
+    setTimerOnDisplay(25)
 }
 
 
