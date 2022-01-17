@@ -80,6 +80,9 @@ h1 {
 #stop-button{
   display: none
 }
+#pause-button{
+  display: none
+}
 
 #start-button:hover,
 #stop-button:hover,

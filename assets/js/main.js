@@ -6,6 +6,7 @@ const options = document.querySelector('#options')
 
 const starButton = document.querySelector('#start-button')
 const stopButton = document.querySelector('#stop-button')
+const pauseButton = document.querySelector('#pause-button')
 
 starButton.addEventListener('click', ()=>{
     start()
@@ -54,12 +55,16 @@ function start(){
 
     starButton.style.display = "none"
     stopButton.style.display = "inline-block"
+    pauseButton.style.display = "inline-block"
     options.style.display = "none"
 
 }
 
 function pause(){
     clearInterval(cron)
+    starButton.style.display = "inline-block"
+    stopButton.style.display = "none"
+    pauseButton.style.display = "none"
     minutes++
 }
 
@@ -68,6 +73,7 @@ function stop(){
 
     starButton.style.display = "inline-block"
     stopButton.style.display = "none"
+    pauseButton.style.display = "none"
     options.style.display = "inline-block"
 
     setTimerOnDisplay(25,0)
