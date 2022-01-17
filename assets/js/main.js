@@ -14,7 +14,7 @@ starButton.addEventListener('click', ()=>{
 
 
 let minutes = 25
-let seconds = 0
+let seconds = 60
 let pomodoros = 0
 var cron
 
@@ -49,7 +49,7 @@ function setTimerOnDisplay(min, sec){
 }
 
 function start(){
-    seconds = 60
+    
     cron = setInterval(timer,1000)
     minutes-- 
 
@@ -63,7 +63,7 @@ function start(){
 function pause(){
     clearInterval(cron)
     starButton.style.display = "inline-block"
-    stopButton.style.display = "none"
+    stopButton.style.display = "inline-block"
     pauseButton.style.display = "none"
     minutes++
 }
